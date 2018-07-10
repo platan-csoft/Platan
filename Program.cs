@@ -7,16 +7,16 @@ using System.Windows.Forms;
 
 namespace sprut
 {
-    static class Program
+    static class Program   
     {
         /// <summary>
         /// Главная точка входа для приложения.
         /// </summary>
         [STAThread]
 
-        static void Main(string[] args)
+        static void Main(string[] args)    
         {
-            if (IsCanExecute("platan"))
+            if (IsCanExecute("platan"))   
             {
 
                 frmMain.FioUser = args[0];
