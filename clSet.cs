@@ -6,7 +6,7 @@ using System.Text;
 namespace sprut
 {	
     
-    public class clSet
+    public class clSet   //clSet.cs - изменение plotnikovsp - пробелы 10.07.18
     {
         
         //private string _is_month_plan;
