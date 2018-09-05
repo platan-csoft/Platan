@@ -96,6 +96,12 @@
     <Compile Include="CustomDataGridView.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="FrmGetParamForOtchet.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmGetParamForOtchet.Designer.cs">
+      <DependentUpon>FrmGetParamForOtchet.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmGetProject.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -153,6 +159,9 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="clTepCalendar.cs" />
+    <EmbeddedResource Include="FrmGetParamForOtchet.resx">
+      <DependentUpon>FrmGetParamForOtchet.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmGetProject.resx">
       <DependentUpon>frmGetProject.cs</DependentUpon>
     </EmbeddedResource>

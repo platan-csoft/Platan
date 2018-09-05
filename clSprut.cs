@@ -2012,6 +2012,11 @@ namespace sprut
         {
             string result = "unknown";
 
+            if (_listTableRecords.Count == 0)
+            {
+                return result;
+            }
+
             bool f1 = false;
             bool f2 = false;
 

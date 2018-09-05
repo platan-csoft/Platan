@@ -88,5 +88,20 @@ namespace sprut
             stage = "-1";
             this.Close();
         }
+
+        private void frmGetProject_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cmbxProject_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

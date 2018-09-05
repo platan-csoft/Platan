@@ -52,7 +52,6 @@ namespace sprut
         Color color_current_day_header = Color.GreenYellow;
         Color color_all_day_fact = Color.FromArgb(170, 170, 200);
         Color color_work_day_header = Color.FromArgb(200, 200, 200);
-        Color color_auto_work_day_header = Color.FromArgb(154, 205, 50);
         Color color_selected_cell = Color.Blue;
         Color color_skud = Color.LightGray;
         #endregion
@@ -191,7 +190,7 @@ namespace sprut
         private void frmMain_Shown(object sender, EventArgs e)
         {
             sprut = new clSprut(dtpDepartmentPlan.Value);
-            this.Text = "ПЛАТАН (1.2) " + sprut.CurrentUser_GetDepartmentSmall() + ". " + sprut.CurrentUser_GetFio();
+            this.Text = "ПЛАТАН (1.3) " + sprut.CurrentUser_GetDepartmentSmall() + ". " + sprut.CurrentUser_GetFio();
             Create_Dictionary_UserSpeciality();
             Create_dgvDepartmentPlan();
             Create_DgvDepartmentUsers();
@@ -2288,7 +2287,7 @@ namespace sprut
                     if (tr.WorkFact > 0)
                         dgvSelectedPlan.Rows[i].Cells[column_name].Style.BackColor = color_fact;
 
-                    if ((tr.WorkPlan > 0) && (tr.WorkFact > 0))  
+                    if ((tr.WorkPlan > 0) && (tr.WorkFact > 0))
                         dgvSelectedPlan.Rows[i].Cells[column_name].Style.BackColor = color_plan_and_fact;
 
                     if (tr.ManuallyInput > 0)
@@ -2297,15 +2296,7 @@ namespace sprut
                     }
                     else
                     {
-                        dgvSelectedPlan.Rows[i].Cells[column_name].Style.ForeColor = Color.Black; //Андрей
-                        if (tr.WorkFact > 0)
-                        {
-                            dgvSelectedPlan.Rows[i].Cells[column_name].Style.BackColor = color_plan_and_fact;
-                        }
-                        else
-                        {
-                            dgvSelectedPlan.Rows[i].Cells[column_name].Style.BackColor = color_auto_work_day_header; //Андрей
-                        }
+                        dgvSelectedPlan.Rows[i].Cells[column_name].Style.ForeColor = dgvSelectedPlan.Rows[i].Cells[column_name].Style.BackColor;
                     }
 
                     if (tr.WorkPlan == 0)
@@ -2846,14 +2837,16 @@ namespace sprut
                     return;
                 }
             }
-
-            string save_mode = sprut.DepartmentPlan_IsModified();
-            if (!save_mode.Equals("unknown"))
+            if (dgvDepartmentPlan.RowCount > 0)
             {
-                diag_res = MessageBox.Show("Сохранить изменения?", "Сохранение", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-                if (diag_res == DialogResult.Yes)
+                string save_mode = sprut.DepartmentPlan_IsModified();
+                if (!save_mode.Equals("unknown"))
                 {
-                    sprut.DepartmentPlan_Save();
+                    diag_res = MessageBox.Show("Сохранить изменения?", "Сохранение", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                    if (diag_res == DialogResult.Yes)
+                    {
+                        sprut.DepartmentPlan_Save();
+                    }
                 }
             }
             dtpDepartmentPlan.Value = dtpDepartmentPlan.Value.AddMonths(1);
@@ -2872,7 +2865,8 @@ namespace sprut
                     return;
                 }
             }
-
+            if (dgvDepartmentPlan.RowCount > 0 )
+            {
             string save_mode = sprut.DepartmentPlan_IsModified();
             if (!save_mode.Equals("unknown"))
             { 
@@ -2882,6 +2876,8 @@ namespace sprut
                     sprut.DepartmentPlan_Save();
                 }
             }
+            }
+
             dtpDepartmentPlan.Value = dtpDepartmentPlan.Value.AddMonths(-1);
             DepartmentPlan_ChangeMonth();
         }
@@ -3233,7 +3229,7 @@ namespace sprut
                     Process proc = new System.Diagnostics.Process();
                     proc.StartInfo.WorkingDirectory = @"c:\Platan";
                     proc.StartInfo.FileName = "Report1.vbs";
-                    proc.StartInfo.Arguments = monthtek + " " + yeartek + " " + stageguid + " " + template + " " + tdmsName + " " + tdmsSrv + " " + userName + " " + userPassword + " " + srvlnk;
+                    proc.StartInfo.Arguments = monthtek + " " + yeartek + " " + "\"" + stageguid + "\"" + " " + template + " " + tdmsName + " " + tdmsSrv + " " + userName + " " + userPassword + " " + srvlnk;
                     proc.Start();
                 }
             }
@@ -3247,7 +3243,11 @@ namespace sprut
             }
         }
 
-        private void отчетПоПроизводственномуПлануToolStripMenuItem_Click(object sender, EventArgs e)
+        //private void отчетПоПроизводственномуПлануToolStripMenuItem_Click(object sender, EventArgs e)
+        //{
+
+        //}
+        private void отчетПоТрудозатратамToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Cursor = Cursors.WaitCursor;
             try
@@ -3261,11 +3261,18 @@ namespace sprut
                 string userName = frmMain.UserSqlName;
                 string userPassword = frmMain.UserSqlPassword;
                 string constr = sprut.GetSprutConnectionString();
-                Process proc = new System.Diagnostics.Process();
-                proc.StartInfo.WorkingDirectory = @"c:\Platan";
-                proc.StartInfo.FileName = "Report3.vbs";
-                proc.StartInfo.Arguments = monthtek + " " + yeartek + " " + template + " " + tdmsName + " " + tdmsSrv + " " + userName + " " + userPassword;
-                proc.Start();
+                FrmGetParamForOtchet frmPrm = new FrmGetParamForOtchet(constr);
+                frmPrm.CreateListSotr(sprut.ListDepartments);
+                frmPrm.Create_list_project(constr, sprut.ListDepartments);
+                frmPrm.Show();
+                if (!frmPrm.cncl)
+                { 
+                    Process proc = new System.Diagnostics.Process();
+                    proc.StartInfo.WorkingDirectory = @"c:\Platan";
+                    proc.StartInfo.FileName = "Report3.vbs";
+                    proc.StartInfo.Arguments = frmPrm.dt_beg.ToShortDateString() + " " + frmPrm.dt_end.ToShortDateString() + " " + frmPrm.depts + " " + "\"" + frmPrm.stage + "\"" + " " + template + " " + tdmsName + " " + tdmsSrv + " " + userName + " " + userPassword;
+                    proc.Start();
+                }
             }
             catch (Exception ex)
             {
@@ -4862,7 +4869,134 @@ namespace sprut
             }
         }
 
-        
+        private void отчет4ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void отчетПоОтделуToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.WaitCursor;
+            try
+            {
+                DateTime report_date = dtpDepartmentPlan.Value;
+                string monthtek = report_date.Month.ToString();
+                string yeartek = report_date.Year.ToString();
+                string template = @"c:\platan\report4_shb.xlsx";
+                string tdmsName = frmMain.TdmsName;
+                string tdmsSrv = frmMain.TdmsSrv;
+                string userName = frmMain.UserSqlName;
+                string userPassword = frmMain.UserSqlPassword;
+                string constr = sprut.GetSprutConnectionString();
+                FrmGetParamForOtchet frmPrm = new FrmGetParamForOtchet(constr);
+                frmPrm.CreateListSotr(sprut.ListDepartments);
+                frmPrm.Create_list_project(constr, sprut.ListDepartments);
+                frmPrm.Show();
+                if (!frmPrm.cncl)
+                {
+                    Process proc = new System.Diagnostics.Process();
+                    proc.StartInfo.WorkingDirectory = @"c:\Platan";
+                    proc.StartInfo.FileName = "Report4.vbs";
+                    proc.StartInfo.Arguments = frmPrm.dt_beg.ToShortDateString() + " " + frmPrm.dt_end.ToShortDateString() + " " + frmPrm.depts + " " + "\"" + frmPrm.stage + "\"" + " " + template + " " + tdmsName + " " + tdmsSrv + " " + userName + " " + userPassword;
+                    proc.Start();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
+            }
+            finally
+            {
+                this.Cursor = Cursors.Default;
+            }
+        }
+
+        private void отчетТабельПоЭтапувЧасахToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.WaitCursor;
+            try
+            {
+                DateTime report_date = dtpDepartmentPlan.Value;
+                string monthtek = report_date.Month.ToString();
+                string yeartek = report_date.Year.ToString();
+                //string stageguid = @"{9FBF4174-1A67-447D-8C01-7BECC0D0468D}";
+                string template = @"c:\platan\report1_1_shb.xlsx";
+                string tdmsName = frmMain.TdmsName;
+                string tdmsSrv = frmMain.TdmsSrv;
+                string userName = frmMain.UserSqlName;
+                string userPassword = frmMain.UserSqlPassword;
+                string constr = sprut.GetSprutConnectionString();
+                string srvlnk = frmMain.SqlLink;
+                frmGetProject frmPrj = new frmGetProject(monthtek, yeartek, constr);
+                // frmPrj.stage = "";
+                frmPrj.Show();
+                if (frmPrj.stage == "")
+                    MessageBox.Show("Отсутствуют данные для формирования отчета");
+                else
+                    if (!(frmPrj.stage == "-1"))
+                {
+                    string stageguid = frmPrj.stage;
+                    Process proc = new System.Diagnostics.Process();
+                    proc.StartInfo.WorkingDirectory = @"c:\Platan";
+                    proc.StartInfo.FileName = "Report1_1.vbs";
+                    proc.StartInfo.Arguments = monthtek + " " + yeartek + " " + "\"" + stageguid + "\"" + " " + template + " " + tdmsName + " " + tdmsSrv + " " + userName + " " + userPassword + " " + srvlnk;
+                    proc.Start();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
+            }
+            finally
+            {
+                this.Cursor = Cursors.Default;
+            }
+        }
+
+        private void отчетПоОтделуГалиахметовToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void отчетПоОтделу2ToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Cursor = Cursors.WaitCursor;
+            try
+            {
+                DateTime report_date = dtpDepartmentPlan.Value;
+                string monthtek = report_date.Month.ToString();
+                string yeartek = report_date.Year.ToString();
+                string template = @"c:\platan\report4_1shb.xlsx";
+                string tdmsName = frmMain.TdmsName;
+                string tdmsSrv = frmMain.TdmsSrv;
+                string userName = frmMain.UserSqlName;
+                string userPassword = frmMain.UserSqlPassword;
+                string constr = sprut.GetSprutConnectionString();
+                FrmGetParamForOtchet frmPrm = new FrmGetParamForOtchet(constr);
+                frmPrm.CreateListSotr(sprut.ListDepartments);
+                frmPrm.Create_list_project(constr, sprut.ListDepartments);
+                frmPrm.Show();
+                if (!frmPrm.cncl)
+                {
+                    Process proc = new System.Diagnostics.Process();
+                    proc.StartInfo.WorkingDirectory = @"c:\Platan";
+                    proc.StartInfo.FileName = "Report4_1.vbs";
+                    proc.StartInfo.Arguments = frmPrm.dt_beg.ToShortDateString() + " " + frmPrm.dt_end.ToShortDateString() + " " + frmPrm.depts + " " + "\"" + frmPrm.stage + "\"" + " " + template + " " + tdmsName + " " + tdmsSrv + " " + userName + " " + userPassword;
+                    proc.Start();
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + "\n" + ex.StackTrace);
+            }
+            finally
+            {
+                this.Cursor = Cursors.Default;
+            }
+        }
+
+
+
 
         //private void button3_Click_1(object sender, EventArgs e)
         //{
@@ -4881,7 +5015,7 @@ namespace sprut
         //    }
         //}
 
-       
+
 
         //private void butPrice_Click(object sender, EventArgs e)
         //{
@@ -4907,7 +5041,7 @@ namespace sprut
         //    }
         //}
 
-        
-        
+
+
     }
 }

@@ -57,8 +57,10 @@
             this.menuStripMain = new System.Windows.Forms.MenuStrip();
             this.tsmi_Reports = new System.Windows.Forms.ToolStripMenuItem();
             this.ОтчетТабельпоэтапуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.отчетТабельПоЭтапувЧасахToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отчетРасчетToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.отчетПоТрудозатратамToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.отчетПоОтделуToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.dtpApprovedPlan = new System.Windows.Forms.TabControl();
             this.tabPageDepartmentPlan = new System.Windows.Forms.TabPage();
             this.tableLayoutPanelMain = new System.Windows.Forms.TableLayoutPanel();
@@ -217,11 +219,13 @@
             // 
             // menuStripMain
             // 
+            this.menuStripMain.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.tsmi_Reports});
             this.menuStripMain.Location = new System.Drawing.Point(0, 0);
             this.menuStripMain.Name = "menuStripMain";
-            this.menuStripMain.Size = new System.Drawing.Size(1091, 24);
+            this.menuStripMain.Padding = new System.Windows.Forms.Padding(8, 2, 0, 2);
+            this.menuStripMain.Size = new System.Drawing.Size(1455, 28);
             this.menuStripMain.TabIndex = 0;
             this.menuStripMain.Text = "menuStrip1";
             // 
@@ -229,25 +233,35 @@
             // 
             this.tsmi_Reports.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ОтчетТабельпоэтапуToolStripMenuItem,
+            this.отчетТабельПоЭтапувЧасахToolStripMenuItem,
             this.отчетРасчетToolStripMenuItem,
-            this.отчетПоТрудозатратамToolStripMenuItem});
+            this.отчетПоТрудозатратамToolStripMenuItem,
+            this.отчетПоОтделуToolStripMenuItem});
             this.tsmi_Reports.Name = "tsmi_Reports";
-            this.tsmi_Reports.Size = new System.Drawing.Size(60, 20);
+            this.tsmi_Reports.Size = new System.Drawing.Size(71, 24);
             this.tsmi_Reports.Text = "Отчеты";
             // 
             // ОтчетТабельпоэтапуToolStripMenuItem
             // 
             this.ОтчетТабельпоэтапуToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("ОтчетТабельпоэтапуToolStripMenuItem.Image")));
             this.ОтчетТабельпоэтапуToolStripMenuItem.Name = "ОтчетТабельпоэтапуToolStripMenuItem";
-            this.ОтчетТабельпоэтапуToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
-            this.ОтчетТабельпоэтапуToolStripMenuItem.Text = "Отчет табель по этапу";
+            this.ОтчетТабельпоэтапуToolStripMenuItem.Size = new System.Drawing.Size(297, 26);
+            this.ОтчетТабельпоэтапуToolStripMenuItem.Text = "Отчет табель по этапу(в днях)";
             this.ОтчетТабельпоэтапуToolStripMenuItem.Click += new System.EventHandler(this.отчетПоПланированиюToolStripMenuItem_Click);
+            // 
+            // отчетТабельПоЭтапувЧасахToolStripMenuItem
+            // 
+            this.отчетТабельПоЭтапувЧасахToolStripMenuItem.Image = global::platan.Properties.Resources.excel16;
+            this.отчетТабельПоЭтапувЧасахToolStripMenuItem.Name = "отчетТабельПоЭтапувЧасахToolStripMenuItem";
+            this.отчетТабельПоЭтапувЧасахToolStripMenuItem.Size = new System.Drawing.Size(297, 26);
+            this.отчетТабельПоЭтапувЧасахToolStripMenuItem.Text = "Отчет табель по этапу(в часах)";
+            this.отчетТабельПоЭтапувЧасахToolStripMenuItem.Click += new System.EventHandler(this.отчетТабельПоЭтапувЧасахToolStripMenuItem_Click);
             // 
             // отчетРасчетToolStripMenuItem
             // 
             this.отчетРасчетToolStripMenuItem.Image = global::platan.Properties.Resources.excel16;
             this.отчетРасчетToolStripMenuItem.Name = "отчетРасчетToolStripMenuItem";
-            this.отчетРасчетToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.отчетРасчетToolStripMenuItem.Size = new System.Drawing.Size(297, 26);
             this.отчетРасчетToolStripMenuItem.Text = "Отчет Расчет";
             this.отчетРасчетToolStripMenuItem.Click += new System.EventHandler(this.отчетДляБухгалтерииToolStripMenuItem_Click);
             // 
@@ -255,9 +269,17 @@
             // 
             this.отчетПоТрудозатратамToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("отчетПоТрудозатратамToolStripMenuItem.Image")));
             this.отчетПоТрудозатратамToolStripMenuItem.Name = "отчетПоТрудозатратамToolStripMenuItem";
-            this.отчетПоТрудозатратамToolStripMenuItem.Size = new System.Drawing.Size(206, 22);
+            this.отчетПоТрудозатратамToolStripMenuItem.Size = new System.Drawing.Size(297, 26);
             this.отчетПоТрудозатратамToolStripMenuItem.Text = "Отчет по трудозатратам";
-            this.отчетПоТрудозатратамToolStripMenuItem.Click += new System.EventHandler(this.отчетПоПроизводственномуПлануToolStripMenuItem_Click);
+            this.отчетПоТрудозатратамToolStripMenuItem.Click += new System.EventHandler(this.отчетПоТрудозатратамToolStripMenuItem_Click);
+            // 
+            // отчетПоОтделуToolStripMenuItem
+            // 
+            this.отчетПоОтделуToolStripMenuItem.Image = global::platan.Properties.Resources.excel16;
+            this.отчетПоОтделуToolStripMenuItem.Name = "отчетПоОтделуToolStripMenuItem";
+            this.отчетПоОтделуToolStripMenuItem.Size = new System.Drawing.Size(297, 26);
+            this.отчетПоОтделуToolStripMenuItem.Text = "Отчет по отделу";
+            this.отчетПоОтделуToolStripMenuItem.Click += new System.EventHandler(this.отчетПоОтделуToolStripMenuItem_Click);
             // 
             // dtpApprovedPlan
             // 
@@ -269,20 +291,22 @@
             this.dtpApprovedPlan.Controls.Add(this.tabPageAgreement);
             this.dtpApprovedPlan.Controls.Add(this.tabPageProductionPlanDept);
             this.dtpApprovedPlan.Controls.Add(this.tabPageProductionPlan);
-            this.dtpApprovedPlan.Location = new System.Drawing.Point(0, 27);
+            this.dtpApprovedPlan.Location = new System.Drawing.Point(0, 33);
+            this.dtpApprovedPlan.Margin = new System.Windows.Forms.Padding(4);
             this.dtpApprovedPlan.Name = "dtpApprovedPlan";
             this.dtpApprovedPlan.Padding = new System.Drawing.Point(3, 1);
             this.dtpApprovedPlan.SelectedIndex = 0;
-            this.dtpApprovedPlan.Size = new System.Drawing.Size(1091, 466);
+            this.dtpApprovedPlan.Size = new System.Drawing.Size(1455, 574);
             this.dtpApprovedPlan.TabIndex = 1;
             // 
             // tabPageDepartmentPlan
             // 
             this.tabPageDepartmentPlan.Controls.Add(this.tableLayoutPanelMain);
-            this.tabPageDepartmentPlan.Location = new System.Drawing.Point(4, 20);
+            this.tabPageDepartmentPlan.Location = new System.Drawing.Point(4, 23);
+            this.tabPageDepartmentPlan.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageDepartmentPlan.Name = "tabPageDepartmentPlan";
             this.tabPageDepartmentPlan.Padding = new System.Windows.Forms.Padding(1);
-            this.tabPageDepartmentPlan.Size = new System.Drawing.Size(1083, 442);
+            this.tabPageDepartmentPlan.Size = new System.Drawing.Size(1447, 547);
             this.tabPageDepartmentPlan.TabIndex = 0;
             this.tabPageDepartmentPlan.Text = "Задачи отдела";
             this.tabPageDepartmentPlan.UseVisualStyleBackColor = true;
@@ -298,9 +322,9 @@
             this.tableLayoutPanelMain.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanelMain.Name = "tableLayoutPanelMain";
             this.tableLayoutPanelMain.RowCount = 2;
-            this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
+            this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
             this.tableLayoutPanelMain.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelMain.Size = new System.Drawing.Size(1081, 440);
+            this.tableLayoutPanelMain.Size = new System.Drawing.Size(1445, 545);
             this.tableLayoutPanelMain.TabIndex = 0;
             // 
             // panelMainTop
@@ -314,16 +338,17 @@
             this.panelMainTop.Location = new System.Drawing.Point(0, 0);
             this.panelMainTop.Margin = new System.Windows.Forms.Padding(0);
             this.panelMainTop.Name = "panelMainTop";
-            this.panelMainTop.Size = new System.Drawing.Size(1081, 36);
+            this.panelMainTop.Size = new System.Drawing.Size(1445, 44);
             this.panelMainTop.TabIndex = 0;
             // 
             // panelDepartments
             // 
             this.panelDepartments.Controls.Add(this.cmbxDepartmentPlan_Departments);
             this.panelDepartments.Controls.Add(this.labelDepartment);
-            this.panelDepartments.Location = new System.Drawing.Point(606, 3);
+            this.panelDepartments.Location = new System.Drawing.Point(808, 4);
+            this.panelDepartments.Margin = new System.Windows.Forms.Padding(4);
             this.panelDepartments.Name = "panelDepartments";
-            this.panelDepartments.Size = new System.Drawing.Size(371, 28);
+            this.panelDepartments.Size = new System.Drawing.Size(495, 34);
             this.panelDepartments.TabIndex = 3;
             // 
             // cmbxDepartmentPlan_Departments
@@ -332,9 +357,10 @@
             this.cmbxDepartmentPlan_Departments.DropDownWidth = 350;
             this.cmbxDepartmentPlan_Departments.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmbxDepartmentPlan_Departments.FormattingEnabled = true;
-            this.cmbxDepartmentPlan_Departments.Location = new System.Drawing.Point(46, 3);
+            this.cmbxDepartmentPlan_Departments.Location = new System.Drawing.Point(61, 4);
+            this.cmbxDepartmentPlan_Departments.Margin = new System.Windows.Forms.Padding(4);
             this.cmbxDepartmentPlan_Departments.Name = "cmbxDepartmentPlan_Departments";
-            this.cmbxDepartmentPlan_Departments.Size = new System.Drawing.Size(322, 21);
+            this.cmbxDepartmentPlan_Departments.Size = new System.Drawing.Size(428, 24);
             this.cmbxDepartmentPlan_Departments.TabIndex = 1;
             this.cmbxDepartmentPlan_Departments.SelectedValueChanged += new System.EventHandler(this.cmbxDepartments_SelectedValueChanged);
             this.cmbxDepartmentPlan_Departments.MouseHover += new System.EventHandler(this.cmbxDepartmentPlan_Departments_MouseHover);
@@ -342,9 +368,10 @@
             // labelDepartment
             // 
             this.labelDepartment.AutoSize = true;
-            this.labelDepartment.Location = new System.Drawing.Point(4, 8);
+            this.labelDepartment.Location = new System.Drawing.Point(5, 10);
+            this.labelDepartment.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelDepartment.Name = "labelDepartment";
-            this.labelDepartment.Size = new System.Drawing.Size(38, 13);
+            this.labelDepartment.Size = new System.Drawing.Size(50, 17);
             this.labelDepartment.TabIndex = 0;
             this.labelDepartment.Text = "Отдел";
             // 
@@ -356,9 +383,10 @@
             this.picbxRefreshDepartmentPlan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picbxRefreshDepartmentPlan.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.picbxRefreshDepartmentPlan.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picbxRefreshDepartmentPlan.Location = new System.Drawing.Point(1046, 4);
+            this.picbxRefreshDepartmentPlan.Location = new System.Drawing.Point(1399, 5);
+            this.picbxRefreshDepartmentPlan.Margin = new System.Windows.Forms.Padding(4);
             this.picbxRefreshDepartmentPlan.Name = "picbxRefreshDepartmentPlan";
-            this.picbxRefreshDepartmentPlan.Size = new System.Drawing.Size(28, 28);
+            this.picbxRefreshDepartmentPlan.Size = new System.Drawing.Size(36, 34);
             this.picbxRefreshDepartmentPlan.TabIndex = 2;
             this.picbxRefreshDepartmentPlan.TabStop = false;
             this.picbxRefreshDepartmentPlan.Click += new System.EventHandler(this.picbxRefreshDepartmentPlan_Click);
@@ -370,9 +398,10 @@
             this.panelDepartmentPlanCalendar.Controls.Add(this.dtpDepartmentPlan);
             this.panelDepartmentPlanCalendar.Controls.Add(this.btnDepartmentPlanInc);
             this.panelDepartmentPlanCalendar.Controls.Add(this.btnDepartmentPlanDec);
-            this.panelDepartmentPlanCalendar.Location = new System.Drawing.Point(382, 3);
+            this.panelDepartmentPlanCalendar.Location = new System.Drawing.Point(509, 4);
+            this.panelDepartmentPlanCalendar.Margin = new System.Windows.Forms.Padding(4);
             this.panelDepartmentPlanCalendar.Name = "panelDepartmentPlanCalendar";
-            this.panelDepartmentPlanCalendar.Size = new System.Drawing.Size(220, 28);
+            this.panelDepartmentPlanCalendar.Size = new System.Drawing.Size(293, 34);
             this.panelDepartmentPlanCalendar.TabIndex = 1;
             // 
             // dtpDepartmentPlan
@@ -380,17 +409,19 @@
             this.dtpDepartmentPlan.CustomFormat = "MMMM yyyy";
             this.dtpDepartmentPlan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.dtpDepartmentPlan.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpDepartmentPlan.Location = new System.Drawing.Point(29, 1);
+            this.dtpDepartmentPlan.Location = new System.Drawing.Point(39, 1);
+            this.dtpDepartmentPlan.Margin = new System.Windows.Forms.Padding(4);
             this.dtpDepartmentPlan.Name = "dtpDepartmentPlan";
-            this.dtpDepartmentPlan.Size = new System.Drawing.Size(163, 26);
+            this.dtpDepartmentPlan.Size = new System.Drawing.Size(216, 30);
             this.dtpDepartmentPlan.TabIndex = 2;
             this.dtpDepartmentPlan.CloseUp += new System.EventHandler(this.dtpDepartmentPlan_CloseUp);
             // 
             // btnDepartmentPlanInc
             // 
-            this.btnDepartmentPlanInc.Location = new System.Drawing.Point(191, 0);
+            this.btnDepartmentPlanInc.Location = new System.Drawing.Point(255, 0);
+            this.btnDepartmentPlanInc.Margin = new System.Windows.Forms.Padding(4);
             this.btnDepartmentPlanInc.Name = "btnDepartmentPlanInc";
-            this.btnDepartmentPlanInc.Size = new System.Drawing.Size(28, 28);
+            this.btnDepartmentPlanInc.Size = new System.Drawing.Size(37, 34);
             this.btnDepartmentPlanInc.TabIndex = 1;
             this.btnDepartmentPlanInc.Text = ">";
             this.btnDepartmentPlanInc.UseVisualStyleBackColor = true;
@@ -399,8 +430,9 @@
             // btnDepartmentPlanDec
             // 
             this.btnDepartmentPlanDec.Location = new System.Drawing.Point(1, 0);
+            this.btnDepartmentPlanDec.Margin = new System.Windows.Forms.Padding(4);
             this.btnDepartmentPlanDec.Name = "btnDepartmentPlanDec";
-            this.btnDepartmentPlanDec.Size = new System.Drawing.Size(28, 28);
+            this.btnDepartmentPlanDec.Size = new System.Drawing.Size(37, 34);
             this.btnDepartmentPlanDec.TabIndex = 0;
             this.btnDepartmentPlanDec.Text = "<";
             this.btnDepartmentPlanDec.UseVisualStyleBackColor = true;
@@ -413,9 +445,10 @@
             this.cmbxStages.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmbxStages.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.cmbxStages.FormattingEnabled = true;
-            this.cmbxStages.Location = new System.Drawing.Point(3, 3);
+            this.cmbxStages.Location = new System.Drawing.Point(4, 4);
+            this.cmbxStages.Margin = new System.Windows.Forms.Padding(4);
             this.cmbxStages.Name = "cmbxStages";
-            this.cmbxStages.Size = new System.Drawing.Size(367, 28);
+            this.cmbxStages.Size = new System.Drawing.Size(488, 33);
             this.cmbxStages.TabIndex = 0;
             this.cmbxStages.Visible = false;
             // 
@@ -423,7 +456,7 @@
             // 
             this.splitContainerMainHor.BackColor = System.Drawing.Color.LightSteelBlue;
             this.splitContainerMainHor.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainerMainHor.Location = new System.Drawing.Point(0, 36);
+            this.splitContainerMainHor.Location = new System.Drawing.Point(0, 44);
             this.splitContainerMainHor.Margin = new System.Windows.Forms.Padding(0);
             this.splitContainerMainHor.Name = "splitContainerMainHor";
             this.splitContainerMainHor.Orientation = System.Windows.Forms.Orientation.Horizontal;
@@ -436,15 +469,16 @@
             // 
             this.splitContainerMainHor.Panel2.BackColor = System.Drawing.Color.WhiteSmoke;
             this.splitContainerMainHor.Panel2.Controls.Add(this.tabControlSelectedPlanAndAgreement);
-            this.splitContainerMainHor.Size = new System.Drawing.Size(1081, 404);
-            this.splitContainerMainHor.SplitterDistance = 229;
-            this.splitContainerMainHor.SplitterWidth = 5;
+            this.splitContainerMainHor.Size = new System.Drawing.Size(1445, 501);
+            this.splitContainerMainHor.SplitterDistance = 283;
+            this.splitContainerMainHor.SplitterWidth = 6;
             this.splitContainerMainHor.TabIndex = 2;
             // 
             // splitContainerMainVert
             // 
             this.splitContainerMainVert.Dock = System.Windows.Forms.DockStyle.Fill;
             this.splitContainerMainVert.Location = new System.Drawing.Point(0, 0);
+            this.splitContainerMainVert.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainerMainVert.Name = "splitContainerMainVert";
             // 
             // splitContainerMainVert.Panel1
@@ -454,8 +488,9 @@
             // splitContainerMainVert.Panel2
             // 
             this.splitContainerMainVert.Panel2.Controls.Add(this.dgvDepartmentUsers);
-            this.splitContainerMainVert.Size = new System.Drawing.Size(1081, 229);
-            this.splitContainerMainVert.SplitterDistance = 829;
+            this.splitContainerMainVert.Size = new System.Drawing.Size(1445, 283);
+            this.splitContainerMainVert.SplitterDistance = 1108;
+            this.splitContainerMainVert.SplitterWidth = 5;
             this.splitContainerMainVert.TabIndex = 0;
             // 
             // dgvDepartmentPlan
@@ -485,6 +520,7 @@
             this.dgvDepartmentPlan.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvDepartmentPlan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDepartmentPlan.Location = new System.Drawing.Point(0, 0);
+            this.dgvDepartmentPlan.Margin = new System.Windows.Forms.Padding(4);
             this.dgvDepartmentPlan.MultiSelect = false;
             this.dgvDepartmentPlan.Name = "dgvDepartmentPlan";
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -497,7 +533,7 @@
             this.dgvDepartmentPlan.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dgvDepartmentPlan.RowHeadersVisible = false;
             this.dgvDepartmentPlan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDepartmentPlan.Size = new System.Drawing.Size(829, 229);
+            this.dgvDepartmentPlan.Size = new System.Drawing.Size(1108, 283);
             this.dgvDepartmentPlan.TabIndex = 0;
             this.dgvDepartmentPlan.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDepartmentPlan_CellClick);
             this.dgvDepartmentPlan.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDepartmentPlan_CellEndEdit);
@@ -535,6 +571,7 @@
             this.dgvDepartmentUsers.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgvDepartmentUsers.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvDepartmentUsers.Location = new System.Drawing.Point(0, 0);
+            this.dgvDepartmentUsers.Margin = new System.Windows.Forms.Padding(4);
             this.dgvDepartmentUsers.Name = "dgvDepartmentUsers";
             this.dgvDepartmentUsers.ReadOnly = true;
             dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -547,7 +584,7 @@
             this.dgvDepartmentUsers.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
             this.dgvDepartmentUsers.RowHeadersVisible = false;
             this.dgvDepartmentUsers.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDepartmentUsers.Size = new System.Drawing.Size(248, 229);
+            this.dgvDepartmentUsers.Size = new System.Drawing.Size(332, 283);
             this.dgvDepartmentUsers.TabIndex = 0;
             this.dgvDepartmentUsers.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDepartmentUsers_CellClick);
             this.dgvDepartmentUsers.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvDepartmentUsers_CellPainting);
@@ -565,16 +602,16 @@
             this.tabControlSelectedPlanAndAgreement.Name = "tabControlSelectedPlanAndAgreement";
             this.tabControlSelectedPlanAndAgreement.Padding = new System.Drawing.Point(3, 1);
             this.tabControlSelectedPlanAndAgreement.SelectedIndex = 0;
-            this.tabControlSelectedPlanAndAgreement.Size = new System.Drawing.Size(1081, 170);
+            this.tabControlSelectedPlanAndAgreement.Size = new System.Drawing.Size(1445, 212);
             this.tabControlSelectedPlanAndAgreement.TabIndex = 0;
             // 
             // tabPageSelectedPlan
             // 
             this.tabPageSelectedPlan.Controls.Add(this.tableLayoutPanelSelectedPlan);
-            this.tabPageSelectedPlan.Location = new System.Drawing.Point(4, 20);
+            this.tabPageSelectedPlan.Location = new System.Drawing.Point(4, 23);
             this.tabPageSelectedPlan.Margin = new System.Windows.Forms.Padding(0);
             this.tabPageSelectedPlan.Name = "tabPageSelectedPlan";
-            this.tabPageSelectedPlan.Size = new System.Drawing.Size(1073, 146);
+            this.tabPageSelectedPlan.Size = new System.Drawing.Size(1437, 185);
             this.tabPageSelectedPlan.TabIndex = 0;
             this.tabPageSelectedPlan.Text = "План";
             this.tabPageSelectedPlan.UseVisualStyleBackColor = true;
@@ -591,8 +628,8 @@
             this.tableLayoutPanelSelectedPlan.Name = "tableLayoutPanelSelectedPlan";
             this.tableLayoutPanelSelectedPlan.RowCount = 2;
             this.tableLayoutPanelSelectedPlan.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelSelectedPlan.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanelSelectedPlan.Size = new System.Drawing.Size(1073, 146);
+            this.tableLayoutPanelSelectedPlan.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
+            this.tableLayoutPanelSelectedPlan.Size = new System.Drawing.Size(1437, 185);
             this.tableLayoutPanelSelectedPlan.TabIndex = 0;
             // 
             // dgvSelectedPlan
@@ -634,7 +671,7 @@
             this.dgvSelectedPlan.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.dgvSelectedPlan.RowHeadersVisible = false;
             this.dgvSelectedPlan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dgvSelectedPlan.Size = new System.Drawing.Size(1073, 106);
+            this.dgvSelectedPlan.Size = new System.Drawing.Size(1437, 136);
             this.dgvSelectedPlan.TabIndex = 0;
             this.dgvSelectedPlan.DataSourceChanged += new System.EventHandler(this.dgvSelectedPlan_DataSourceChanged);
             this.dgvSelectedPlan.CellBeginEdit += new System.Windows.Forms.DataGridViewCellCancelEventHandler(this.dgvSelectedPlan_CellBeginEdit);
@@ -652,18 +689,19 @@
             this.panelSelectedPlan.Controls.Add(this.btnDepartmentPlan_Save);
             this.panelSelectedPlan.Controls.Add(this.btnDepartmentPlan_AddSet);
             this.panelSelectedPlan.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelSelectedPlan.Location = new System.Drawing.Point(0, 106);
+            this.panelSelectedPlan.Location = new System.Drawing.Point(0, 136);
             this.panelSelectedPlan.Margin = new System.Windows.Forms.Padding(0);
             this.panelSelectedPlan.Name = "panelSelectedPlan";
-            this.panelSelectedPlan.Size = new System.Drawing.Size(1073, 40);
+            this.panelSelectedPlan.Size = new System.Drawing.Size(1437, 49);
             this.panelSelectedPlan.TabIndex = 1;
             // 
             // btnAgreeSetPlaned
             // 
             this.btnAgreeSetPlaned.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnAgreeSetPlaned.Location = new System.Drawing.Point(829, 3);
+            this.btnAgreeSetPlaned.Location = new System.Drawing.Point(1111, 4);
+            this.btnAgreeSetPlaned.Margin = new System.Windows.Forms.Padding(4);
             this.btnAgreeSetPlaned.Name = "btnAgreeSetPlaned";
-            this.btnAgreeSetPlaned.Size = new System.Drawing.Size(135, 34);
+            this.btnAgreeSetPlaned.Size = new System.Drawing.Size(180, 42);
             this.btnAgreeSetPlaned.TabIndex = 5;
             this.btnAgreeSetPlaned.Text = "Согласовать запланированные комплекты";
             this.btnAgreeSetPlaned.UseVisualStyleBackColor = true;
@@ -673,9 +711,10 @@
             // btnDepartmentPlan_Save
             // 
             this.btnDepartmentPlan_Save.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnDepartmentPlan_Save.Location = new System.Drawing.Point(967, 3);
+            this.btnDepartmentPlan_Save.Location = new System.Drawing.Point(1295, 4);
+            this.btnDepartmentPlan_Save.Margin = new System.Windows.Forms.Padding(4);
             this.btnDepartmentPlan_Save.Name = "btnDepartmentPlan_Save";
-            this.btnDepartmentPlan_Save.Size = new System.Drawing.Size(103, 34);
+            this.btnDepartmentPlan_Save.Size = new System.Drawing.Size(137, 42);
             this.btnDepartmentPlan_Save.TabIndex = 3;
             this.btnDepartmentPlan_Save.Text = "Сохранить план";
             this.btnDepartmentPlan_Save.UseVisualStyleBackColor = true;
@@ -683,9 +722,10 @@
             // 
             // btnDepartmentPlan_AddSet
             // 
-            this.btnDepartmentPlan_AddSet.Location = new System.Drawing.Point(3, 3);
+            this.btnDepartmentPlan_AddSet.Location = new System.Drawing.Point(4, 4);
+            this.btnDepartmentPlan_AddSet.Margin = new System.Windows.Forms.Padding(4);
             this.btnDepartmentPlan_AddSet.Name = "btnDepartmentPlan_AddSet";
-            this.btnDepartmentPlan_AddSet.Size = new System.Drawing.Size(128, 34);
+            this.btnDepartmentPlan_AddSet.Size = new System.Drawing.Size(171, 42);
             this.btnDepartmentPlan_AddSet.TabIndex = 2;
             this.btnDepartmentPlan_AddSet.Text = "Добавить другие работы и комплекты";
             this.btnDepartmentPlan_AddSet.UseVisualStyleBackColor = true;
@@ -694,10 +734,11 @@
             // tabPageIndividualPlan
             // 
             this.tabPageIndividualPlan.Controls.Add(this.tableLayoutPanelIndividualPlan);
-            this.tabPageIndividualPlan.Location = new System.Drawing.Point(4, 20);
+            this.tabPageIndividualPlan.Location = new System.Drawing.Point(4, 23);
+            this.tabPageIndividualPlan.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageIndividualPlan.Name = "tabPageIndividualPlan";
             this.tabPageIndividualPlan.Padding = new System.Windows.Forms.Padding(1);
-            this.tabPageIndividualPlan.Size = new System.Drawing.Size(1083, 442);
+            this.tabPageIndividualPlan.Size = new System.Drawing.Size(1447, 547);
             this.tabPageIndividualPlan.TabIndex = 1;
             this.tabPageIndividualPlan.Text = "Индивидуальный план";
             this.tabPageIndividualPlan.UseVisualStyleBackColor = true;
@@ -714,11 +755,11 @@
             this.tableLayoutPanelIndividualPlan.Margin = new System.Windows.Forms.Padding(0);
             this.tableLayoutPanelIndividualPlan.Name = "tableLayoutPanelIndividualPlan";
             this.tableLayoutPanelIndividualPlan.RowCount = 3;
-            this.tableLayoutPanelIndividualPlan.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 36F));
+            this.tableLayoutPanelIndividualPlan.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 44F));
             this.tableLayoutPanelIndividualPlan.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanelIndividualPlan.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 42F));
-            this.tableLayoutPanelIndividualPlan.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanelIndividualPlan.Size = new System.Drawing.Size(1081, 440);
+            this.tableLayoutPanelIndividualPlan.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 52F));
+            this.tableLayoutPanelIndividualPlan.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanelIndividualPlan.Size = new System.Drawing.Size(1445, 545);
             this.tableLayoutPanelIndividualPlan.TabIndex = 0;
             // 
             // panelindividualPlanTop
@@ -731,7 +772,7 @@
             this.panelindividualPlanTop.Location = new System.Drawing.Point(0, 0);
             this.panelindividualPlanTop.Margin = new System.Windows.Forms.Padding(0);
             this.panelindividualPlanTop.Name = "panelindividualPlanTop";
-            this.panelindividualPlanTop.Size = new System.Drawing.Size(1081, 36);
+            this.panelindividualPlanTop.Size = new System.Drawing.Size(1445, 44);
             this.panelindividualPlanTop.TabIndex = 0;
             // 
             // picbxRefreshIndividualPlan
@@ -741,9 +782,10 @@
             this.picbxRefreshIndividualPlan.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picbxRefreshIndividualPlan.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.picbxRefreshIndividualPlan.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picbxRefreshIndividualPlan.Location = new System.Drawing.Point(1046, 4);
+            this.picbxRefreshIndividualPlan.Location = new System.Drawing.Point(1399, 5);
+            this.picbxRefreshIndividualPlan.Margin = new System.Windows.Forms.Padding(4);
             this.picbxRefreshIndividualPlan.Name = "picbxRefreshIndividualPlan";
-            this.picbxRefreshIndividualPlan.Size = new System.Drawing.Size(28, 28);
+            this.picbxRefreshIndividualPlan.Size = new System.Drawing.Size(36, 34);
             this.picbxRefreshIndividualPlan.TabIndex = 4;
             this.picbxRefreshIndividualPlan.TabStop = false;
             this.picbxRefreshIndividualPlan.Click += new System.EventHandler(this.picbxRefreshIndividualPLan_Click);
@@ -755,9 +797,10 @@
             this.panelIndividualPlanDatePicker.Controls.Add(this.dtpIndividualPlan);
             this.panelIndividualPlanDatePicker.Controls.Add(this.btnIndividualPlanInc);
             this.panelIndividualPlanDatePicker.Controls.Add(this.btnIndividualPlanDec);
-            this.panelIndividualPlanDatePicker.Location = new System.Drawing.Point(395, 3);
+            this.panelIndividualPlanDatePicker.Location = new System.Drawing.Point(527, 4);
+            this.panelIndividualPlanDatePicker.Margin = new System.Windows.Forms.Padding(4);
             this.panelIndividualPlanDatePicker.Name = "panelIndividualPlanDatePicker";
-            this.panelIndividualPlanDatePicker.Size = new System.Drawing.Size(224, 31);
+            this.panelIndividualPlanDatePicker.Size = new System.Drawing.Size(299, 38);
             this.panelIndividualPlanDatePicker.TabIndex = 3;
             // 
             // dtpIndividualPlan
@@ -765,16 +808,18 @@
             this.dtpIndividualPlan.CustomFormat = "MMMM yyyy";
             this.dtpIndividualPlan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.dtpIndividualPlan.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpIndividualPlan.Location = new System.Drawing.Point(30, 1);
+            this.dtpIndividualPlan.Location = new System.Drawing.Point(40, 1);
+            this.dtpIndividualPlan.Margin = new System.Windows.Forms.Padding(4);
             this.dtpIndividualPlan.Name = "dtpIndividualPlan";
-            this.dtpIndividualPlan.Size = new System.Drawing.Size(163, 26);
+            this.dtpIndividualPlan.Size = new System.Drawing.Size(216, 30);
             this.dtpIndividualPlan.TabIndex = 2;
             // 
             // btnIndividualPlanInc
             // 
-            this.btnIndividualPlanInc.Location = new System.Drawing.Point(192, 0);
+            this.btnIndividualPlanInc.Location = new System.Drawing.Point(256, 0);
+            this.btnIndividualPlanInc.Margin = new System.Windows.Forms.Padding(4);
             this.btnIndividualPlanInc.Name = "btnIndividualPlanInc";
-            this.btnIndividualPlanInc.Size = new System.Drawing.Size(28, 28);
+            this.btnIndividualPlanInc.Size = new System.Drawing.Size(37, 34);
             this.btnIndividualPlanInc.TabIndex = 1;
             this.btnIndividualPlanInc.Text = ">";
             this.btnIndividualPlanInc.UseVisualStyleBackColor = true;
@@ -782,9 +827,10 @@
             // 
             // btnIndividualPlanDec
             // 
-            this.btnIndividualPlanDec.Location = new System.Drawing.Point(2, 0);
+            this.btnIndividualPlanDec.Location = new System.Drawing.Point(3, 0);
+            this.btnIndividualPlanDec.Margin = new System.Windows.Forms.Padding(4);
             this.btnIndividualPlanDec.Name = "btnIndividualPlanDec";
-            this.btnIndividualPlanDec.Size = new System.Drawing.Size(28, 28);
+            this.btnIndividualPlanDec.Size = new System.Drawing.Size(37, 34);
             this.btnIndividualPlanDec.TabIndex = 0;
             this.btnIndividualPlanDec.Text = "<";
             this.btnIndividualPlanDec.UseVisualStyleBackColor = true;
@@ -794,9 +840,10 @@
             // 
             this.panelIndividualPlanUser.Controls.Add(this.labelSelectedUser);
             this.panelIndividualPlanUser.Controls.Add(this.labelUser);
-            this.panelIndividualPlanUser.Location = new System.Drawing.Point(5, 3);
+            this.panelIndividualPlanUser.Location = new System.Drawing.Point(7, 4);
+            this.panelIndividualPlanUser.Margin = new System.Windows.Forms.Padding(4);
             this.panelIndividualPlanUser.Name = "panelIndividualPlanUser";
-            this.panelIndividualPlanUser.Size = new System.Drawing.Size(386, 31);
+            this.panelIndividualPlanUser.Size = new System.Drawing.Size(515, 38);
             this.panelIndividualPlanUser.TabIndex = 2;
             // 
             // labelSelectedUser
@@ -804,9 +851,10 @@
             this.labelSelectedUser.AutoSize = true;
             this.labelSelectedUser.Cursor = System.Windows.Forms.Cursors.Hand;
             this.labelSelectedUser.Font = new System.Drawing.Font("Times New Roman", 10F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.labelSelectedUser.Location = new System.Drawing.Point(69, 7);
+            this.labelSelectedUser.Location = new System.Drawing.Point(92, 9);
+            this.labelSelectedUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelSelectedUser.Name = "labelSelectedUser";
-            this.labelSelectedUser.Size = new System.Drawing.Size(20, 17);
+            this.labelSelectedUser.Size = new System.Drawing.Size(21, 19);
             this.labelSelectedUser.TabIndex = 1;
             this.labelSelectedUser.Text = "...";
             this.labelSelectedUser.Click += new System.EventHandler(this.labelSelectedUser_Click);
@@ -816,9 +864,10 @@
             // labelUser
             // 
             this.labelUser.AutoSize = true;
-            this.labelUser.Location = new System.Drawing.Point(3, 11);
+            this.labelUser.Location = new System.Drawing.Point(4, 14);
+            this.labelUser.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelUser.Name = "labelUser";
-            this.labelUser.Size = new System.Drawing.Size(60, 13);
+            this.labelUser.Size = new System.Drawing.Size(78, 17);
             this.labelUser.TabIndex = 0;
             this.labelUser.Text = "Сотрудник";
             // 
@@ -836,86 +885,95 @@
             this.panelIndividualPlanBottom.Controls.Add(this.btnIndividualPlanAddSet);
             this.panelIndividualPlanBottom.Controls.Add(this.btnIndividualPlanSave);
             this.panelIndividualPlanBottom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelIndividualPlanBottom.Location = new System.Drawing.Point(0, 398);
+            this.panelIndividualPlanBottom.Location = new System.Drawing.Point(0, 493);
             this.panelIndividualPlanBottom.Margin = new System.Windows.Forms.Padding(0);
             this.panelIndividualPlanBottom.Name = "panelIndividualPlanBottom";
-            this.panelIndividualPlanBottom.Size = new System.Drawing.Size(1081, 42);
+            this.panelIndividualPlanBottom.Size = new System.Drawing.Size(1445, 52);
             this.panelIndividualPlanBottom.TabIndex = 1;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(648, 4);
+            this.label4.Location = new System.Drawing.Point(864, 5);
+            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(33, 13);
+            this.label4.Size = new System.Drawing.Size(42, 17);
             this.label4.TabIndex = 10;
             this.label4.Text = "План";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(280, 2);
+            this.label3.Location = new System.Drawing.Point(373, 2);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(57, 13);
+            this.label3.Size = new System.Drawing.Size(73, 17);
             this.label3.TabIndex = 9;
             this.label3.Text = "Выходной";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(473, 25);
+            this.label2.Location = new System.Drawing.Point(631, 31);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(103, 13);
+            this.label2.Size = new System.Drawing.Size(135, 17);
             this.label2.TabIndex = 8;
             this.label2.Text = "Списание по плану";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(473, 3);
+            this.label1.Location = new System.Drawing.Point(631, 4);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(125, 13);
+            this.label1.Size = new System.Drawing.Size(162, 17);
             this.label1.TabIndex = 7;
             this.label1.Text = "Внеплановое списание";
             // 
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.Yellow;
-            this.panel5.Location = new System.Drawing.Point(252, 2);
+            this.panel5.Location = new System.Drawing.Point(336, 2);
+            this.panel5.Margin = new System.Windows.Forms.Padding(4);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(21, 17);
+            this.panel5.Size = new System.Drawing.Size(28, 21);
             this.panel5.TabIndex = 5;
             // 
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.SkyBlue;
-            this.panel4.Location = new System.Drawing.Point(621, 3);
+            this.panel4.Location = new System.Drawing.Point(828, 4);
+            this.panel4.Margin = new System.Windows.Forms.Padding(4);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(21, 17);
+            this.panel4.Size = new System.Drawing.Size(28, 21);
             this.panel4.TabIndex = 4;
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Orange;
-            this.panel3.Location = new System.Drawing.Point(445, 2);
+            this.panel3.Location = new System.Drawing.Point(593, 2);
+            this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(21, 17);
+            this.panel3.Size = new System.Drawing.Size(28, 21);
             this.panel3.TabIndex = 3;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.panel2.Location = new System.Drawing.Point(445, 22);
+            this.panel2.Location = new System.Drawing.Point(593, 27);
+            this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(21, 17);
+            this.panel2.Size = new System.Drawing.Size(28, 21);
             this.panel2.TabIndex = 2;
             // 
             // btnIndividualPlanAddSet
             // 
             this.btnIndividualPlanAddSet.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.btnIndividualPlanAddSet.Location = new System.Drawing.Point(2, 4);
+            this.btnIndividualPlanAddSet.Location = new System.Drawing.Point(3, 5);
+            this.btnIndividualPlanAddSet.Margin = new System.Windows.Forms.Padding(4);
             this.btnIndividualPlanAddSet.Name = "btnIndividualPlanAddSet";
-            this.btnIndividualPlanAddSet.Size = new System.Drawing.Size(131, 35);
+            this.btnIndividualPlanAddSet.Size = new System.Drawing.Size(175, 43);
             this.btnIndividualPlanAddSet.TabIndex = 1;
             this.btnIndividualPlanAddSet.Text = "Добавить другие работы и комплекты";
             this.btnIndividualPlanAddSet.UseVisualStyleBackColor = true;
@@ -924,9 +982,10 @@
             // btnIndividualPlanSave
             // 
             this.btnIndividualPlanSave.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnIndividualPlanSave.Location = new System.Drawing.Point(975, 4);
+            this.btnIndividualPlanSave.Location = new System.Drawing.Point(1304, 5);
+            this.btnIndividualPlanSave.Margin = new System.Windows.Forms.Padding(4);
             this.btnIndividualPlanSave.Name = "btnIndividualPlanSave";
-            this.btnIndividualPlanSave.Size = new System.Drawing.Size(103, 35);
+            this.btnIndividualPlanSave.Size = new System.Drawing.Size(137, 43);
             this.btnIndividualPlanSave.TabIndex = 0;
             this.btnIndividualPlanSave.Text = "Сохранить";
             this.btnIndividualPlanSave.UseVisualStyleBackColor = true;
@@ -940,12 +999,13 @@
             this.dgvIndividualPlan.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.Raised;
             this.dgvIndividualPlan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvIndividualPlan.EnableHeadersVisualStyles = false;
-            this.dgvIndividualPlan.Location = new System.Drawing.Point(3, 39);
+            this.dgvIndividualPlan.Location = new System.Drawing.Point(4, 48);
+            this.dgvIndividualPlan.Margin = new System.Windows.Forms.Padding(4);
             this.dgvIndividualPlan.Name = "dgvIndividualPlan";
             this.dgvIndividualPlan.RowHeadersVisible = false;
             this.dgvIndividualPlan.RowTemplate.DefaultCellStyle.SelectionBackColor = System.Drawing.Color.WhiteSmoke;
             this.dgvIndividualPlan.RowTemplate.DefaultCellStyle.SelectionForeColor = System.Drawing.Color.Black;
-            this.dgvIndividualPlan.Size = new System.Drawing.Size(1075, 356);
+            this.dgvIndividualPlan.Size = new System.Drawing.Size(1437, 441);
             this.dgvIndividualPlan.TabIndex = 2;
             this.dgvIndividualPlan.DataSourceChanged += new System.EventHandler(this.dgvIndividualPlan_DataSourceChanged);
             this.dgvIndividualPlan.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvIndividualPlan_CellEndEdit);
@@ -963,9 +1023,10 @@
             // tabPageAgreement
             // 
             this.tabPageAgreement.Controls.Add(this.tableLayoutPanel_Agreement);
-            this.tabPageAgreement.Location = new System.Drawing.Point(4, 20);
+            this.tabPageAgreement.Location = new System.Drawing.Point(4, 23);
+            this.tabPageAgreement.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageAgreement.Name = "tabPageAgreement";
-            this.tabPageAgreement.Size = new System.Drawing.Size(1083, 442);
+            this.tabPageAgreement.Size = new System.Drawing.Size(1447, 547);
             this.tabPageAgreement.TabIndex = 2;
             this.tabPageAgreement.Text = "Согласование сроков";
             this.tabPageAgreement.UseVisualStyleBackColor = true;
@@ -979,13 +1040,14 @@
             this.tableLayoutPanel_Agreement.Controls.Add(this.panelAgreementBottom, 0, 2);
             this.tableLayoutPanel_Agreement.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel_Agreement.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel_Agreement.Margin = new System.Windows.Forms.Padding(4);
             this.tableLayoutPanel_Agreement.Name = "tableLayoutPanel_Agreement";
             this.tableLayoutPanel_Agreement.RowCount = 4;
-            this.tableLayoutPanel_Agreement.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 37F));
+            this.tableLayoutPanel_Agreement.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 46F));
             this.tableLayoutPanel_Agreement.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel_Agreement.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 40F));
-            this.tableLayoutPanel_Agreement.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel_Agreement.Size = new System.Drawing.Size(1083, 442);
+            this.tableLayoutPanel_Agreement.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 49F));
+            this.tableLayoutPanel_Agreement.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 25F));
+            this.tableLayoutPanel_Agreement.Size = new System.Drawing.Size(1447, 547);
             this.tableLayoutPanel_Agreement.TabIndex = 0;
             // 
             // dgvAgreement
@@ -1013,7 +1075,8 @@
             dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvAgreement.DefaultCellStyle = dataGridViewCellStyle12;
             this.dgvAgreement.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dgvAgreement.Location = new System.Drawing.Point(3, 40);
+            this.dgvAgreement.Location = new System.Drawing.Point(4, 50);
+            this.dgvAgreement.Margin = new System.Windows.Forms.Padding(4);
             this.dgvAgreement.Name = "dgvAgreement";
             dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Control;
@@ -1029,7 +1092,7 @@
             this.dgvAgreement.RowsDefaultCellStyle = dataGridViewCellStyle14;
             this.dgvAgreement.RowTemplate.Height = 120;
             this.dgvAgreement.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvAgreement.Size = new System.Drawing.Size(1077, 339);
+            this.dgvAgreement.Size = new System.Drawing.Size(1439, 419);
             this.dgvAgreement.TabIndex = 0;
             this.dgvAgreement.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvAgreement_CellContentClick);
             this.dgvAgreement.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dgvAgreement_CellPainting);
@@ -1046,7 +1109,7 @@
             this.panelAgreementTop.Location = new System.Drawing.Point(0, 0);
             this.panelAgreementTop.Margin = new System.Windows.Forms.Padding(0);
             this.panelAgreementTop.Name = "panelAgreementTop";
-            this.panelAgreementTop.Size = new System.Drawing.Size(1083, 37);
+            this.panelAgreementTop.Size = new System.Drawing.Size(1447, 46);
             this.panelAgreementTop.TabIndex = 2;
             // 
             // picbxRefreshAgreement
@@ -1056,9 +1119,10 @@
             this.picbxRefreshAgreement.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.picbxRefreshAgreement.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.picbxRefreshAgreement.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picbxRefreshAgreement.Location = new System.Drawing.Point(1047, 5);
+            this.picbxRefreshAgreement.Location = new System.Drawing.Point(1399, 6);
+            this.picbxRefreshAgreement.Margin = new System.Windows.Forms.Padding(4);
             this.picbxRefreshAgreement.Name = "picbxRefreshAgreement";
-            this.picbxRefreshAgreement.Size = new System.Drawing.Size(28, 28);
+            this.picbxRefreshAgreement.Size = new System.Drawing.Size(36, 34);
             this.picbxRefreshAgreement.TabIndex = 1;
             this.picbxRefreshAgreement.TabStop = false;
             this.picbxRefreshAgreement.Click += new System.EventHandler(this.picbxRefreshAgreement_Click);
@@ -1067,9 +1131,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(800, 6);
+            this.button2.Location = new System.Drawing.Point(1067, 7);
+            this.button2.Margin = new System.Windows.Forms.Padding(4);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(147, 25);
+            this.button2.Size = new System.Drawing.Size(196, 31);
             this.button2.TabIndex = 4;
             this.button2.Text = "Выгрузить в EXCEL\r\n";
             this.button2.UseVisualStyleBackColor = true;
@@ -1079,9 +1144,10 @@
             // 
             this.panel1.Controls.Add(this.cmbxAgreement_Departments);
             this.panel1.Controls.Add(this.labelAgreementDepartment);
-            this.panel1.Location = new System.Drawing.Point(8, 3);
+            this.panel1.Location = new System.Drawing.Point(11, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(139, 28);
+            this.panel1.Size = new System.Drawing.Size(185, 34);
             this.panel1.TabIndex = 0;
             // 
             // cmbxAgreement_Departments
@@ -1089,9 +1155,10 @@
             this.cmbxAgreement_Departments.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbxAgreement_Departments.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.cmbxAgreement_Departments.FormattingEnabled = true;
-            this.cmbxAgreement_Departments.Location = new System.Drawing.Point(53, 4);
+            this.cmbxAgreement_Departments.Location = new System.Drawing.Point(71, 5);
+            this.cmbxAgreement_Departments.Margin = new System.Windows.Forms.Padding(4);
             this.cmbxAgreement_Departments.Name = "cmbxAgreement_Departments";
-            this.cmbxAgreement_Departments.Size = new System.Drawing.Size(83, 21);
+            this.cmbxAgreement_Departments.Size = new System.Drawing.Size(109, 24);
             this.cmbxAgreement_Departments.TabIndex = 1;
             this.cmbxAgreement_Departments.Visible = false;
             this.cmbxAgreement_Departments.SelectionChangeCommitted += new System.EventHandler(this.cmbxAgreement_Departments_SelectionChangeCommitted);
@@ -1099,9 +1166,10 @@
             // labelAgreementDepartment
             // 
             this.labelAgreementDepartment.AutoSize = true;
-            this.labelAgreementDepartment.Location = new System.Drawing.Point(8, 8);
+            this.labelAgreementDepartment.Location = new System.Drawing.Point(11, 10);
+            this.labelAgreementDepartment.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelAgreementDepartment.Name = "labelAgreementDepartment";
-            this.labelAgreementDepartment.Size = new System.Drawing.Size(38, 13);
+            this.labelAgreementDepartment.Size = new System.Drawing.Size(50, 17);
             this.labelAgreementDepartment.TabIndex = 0;
             this.labelAgreementDepartment.Text = "Отдел";
             this.labelAgreementDepartment.Visible = false;
@@ -1109,9 +1177,10 @@
             // panelAgreementBottom
             // 
             this.panelAgreementBottom.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelAgreementBottom.Location = new System.Drawing.Point(3, 385);
+            this.panelAgreementBottom.Location = new System.Drawing.Point(4, 477);
+            this.panelAgreementBottom.Margin = new System.Windows.Forms.Padding(4);
             this.panelAgreementBottom.Name = "panelAgreementBottom";
-            this.panelAgreementBottom.Size = new System.Drawing.Size(1077, 34);
+            this.panelAgreementBottom.Size = new System.Drawing.Size(1439, 41);
             this.panelAgreementBottom.TabIndex = 3;
             // 
             // tabPageProductionPlanDept
@@ -1120,10 +1189,11 @@
             this.tabPageProductionPlanDept.Controls.Add(this.richTextBox2);
             this.tabPageProductionPlanDept.Controls.Add(this.dgvProductionPlanDept);
             this.tabPageProductionPlanDept.Controls.Add(this.panelApprovedTop);
-            this.tabPageProductionPlanDept.Location = new System.Drawing.Point(4, 20);
+            this.tabPageProductionPlanDept.Location = new System.Drawing.Point(4, 23);
+            this.tabPageProductionPlanDept.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageProductionPlanDept.Name = "tabPageProductionPlanDept";
-            this.tabPageProductionPlanDept.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPageProductionPlanDept.Size = new System.Drawing.Size(1083, 442);
+            this.tabPageProductionPlanDept.Padding = new System.Windows.Forms.Padding(4);
+            this.tabPageProductionPlanDept.Size = new System.Drawing.Size(1447, 547);
             this.tabPageProductionPlanDept.TabIndex = 3;
             this.tabPageProductionPlanDept.Text = "Производственный план";
             this.tabPageProductionPlanDept.UseVisualStyleBackColor = true;
@@ -1132,9 +1202,10 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.label7.Location = new System.Drawing.Point(3, 373);
+            this.label7.Location = new System.Drawing.Point(4, 462);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(80, 13);
+            this.label7.Size = new System.Drawing.Size(102, 17);
             this.label7.TabIndex = 5;
             this.label7.Text = "Комментарий ";
             // 
@@ -1142,10 +1213,11 @@
             // 
             this.richTextBox2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.richTextBox2.Enabled = false;
-            this.richTextBox2.Location = new System.Drawing.Point(3, 386);
+            this.richTextBox2.Location = new System.Drawing.Point(4, 479);
+            this.richTextBox2.Margin = new System.Windows.Forms.Padding(4);
             this.richTextBox2.MaxLength = 2900;
             this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(1077, 53);
+            this.richTextBox2.Size = new System.Drawing.Size(1439, 64);
             this.richTextBox2.TabIndex = 4;
             this.richTextBox2.Text = "";
             // 
@@ -1176,7 +1248,8 @@
             dataGridViewCellStyle17.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle17.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvProductionPlanDept.DefaultCellStyle = dataGridViewCellStyle17;
-            this.dgvProductionPlanDept.Location = new System.Drawing.Point(0, 37);
+            this.dgvProductionPlanDept.Location = new System.Drawing.Point(0, 46);
+            this.dgvProductionPlanDept.Margin = new System.Windows.Forms.Padding(4);
             this.dgvProductionPlanDept.Name = "dgvProductionPlanDept";
             this.dgvProductionPlanDept.ReadOnly = true;
             dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -1188,7 +1261,7 @@
             this.dgvProductionPlanDept.RowHeadersDefaultCellStyle = dataGridViewCellStyle18;
             this.dgvProductionPlanDept.RowTemplate.Height = 20;
             this.dgvProductionPlanDept.RowTemplate.ReadOnly = true;
-            this.dgvProductionPlanDept.Size = new System.Drawing.Size(1080, 479);
+            this.dgvProductionPlanDept.Size = new System.Drawing.Size(1440, 590);
             this.dgvProductionPlanDept.TabIndex = 0;
             // 
             // panelApprovedTop
@@ -1200,10 +1273,10 @@
             this.panelApprovedTop.Controls.Add(this.label5);
             this.panelApprovedTop.Controls.Add(this.button1);
             this.panelApprovedTop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelApprovedTop.Location = new System.Drawing.Point(3, 3);
+            this.panelApprovedTop.Location = new System.Drawing.Point(4, 4);
             this.panelApprovedTop.Margin = new System.Windows.Forms.Padding(0);
             this.panelApprovedTop.Name = "panelApprovedTop";
-            this.panelApprovedTop.Size = new System.Drawing.Size(1077, 36);
+            this.panelApprovedTop.Size = new System.Drawing.Size(1439, 44);
             this.panelApprovedTop.TabIndex = 3;
             // 
             // dtpProductionPlanDept
@@ -1211,25 +1284,28 @@
             this.dtpProductionPlanDept.CustomFormat = "MMMM yyyy";
             this.dtpProductionPlanDept.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.dtpProductionPlanDept.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpProductionPlanDept.Location = new System.Drawing.Point(426, 5);
+            this.dtpProductionPlanDept.Location = new System.Drawing.Point(568, 6);
+            this.dtpProductionPlanDept.Margin = new System.Windows.Forms.Padding(4);
             this.dtpProductionPlanDept.Name = "dtpProductionPlanDept";
-            this.dtpProductionPlanDept.Size = new System.Drawing.Size(163, 26);
+            this.dtpProductionPlanDept.Size = new System.Drawing.Size(216, 30);
             this.dtpProductionPlanDept.TabIndex = 8;
             // 
             // btnProductionPlanDeptInc
             // 
-            this.btnProductionPlanDeptInc.Location = new System.Drawing.Point(588, 4);
+            this.btnProductionPlanDeptInc.Location = new System.Drawing.Point(784, 5);
+            this.btnProductionPlanDeptInc.Margin = new System.Windows.Forms.Padding(4);
             this.btnProductionPlanDeptInc.Name = "btnProductionPlanDeptInc";
-            this.btnProductionPlanDeptInc.Size = new System.Drawing.Size(28, 28);
+            this.btnProductionPlanDeptInc.Size = new System.Drawing.Size(37, 34);
             this.btnProductionPlanDeptInc.TabIndex = 7;
             this.btnProductionPlanDeptInc.Text = ">";
             this.btnProductionPlanDeptInc.UseVisualStyleBackColor = true;
             // 
             // btnProductionPlanDeptIncDec
             // 
-            this.btnProductionPlanDeptIncDec.Location = new System.Drawing.Point(398, 4);
+            this.btnProductionPlanDeptIncDec.Location = new System.Drawing.Point(531, 5);
+            this.btnProductionPlanDeptIncDec.Margin = new System.Windows.Forms.Padding(4);
             this.btnProductionPlanDeptIncDec.Name = "btnProductionPlanDeptIncDec";
-            this.btnProductionPlanDeptIncDec.Size = new System.Drawing.Size(28, 28);
+            this.btnProductionPlanDeptIncDec.Size = new System.Drawing.Size(37, 34);
             this.btnProductionPlanDeptIncDec.TabIndex = 6;
             this.btnProductionPlanDeptIncDec.Text = "<";
             this.btnProductionPlanDeptIncDec.UseVisualStyleBackColor = true;
@@ -1239,17 +1315,19 @@
             this.label5.AutoSize = true;
             this.label5.BackColor = System.Drawing.Color.LightYellow;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.Location = new System.Drawing.Point(8, 8);
+            this.label5.Location = new System.Drawing.Point(11, 10);
+            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(51, 20);
+            this.label5.Size = new System.Drawing.Size(64, 25);
             this.label5.TabIndex = 5;
             this.label5.Text = "label5";
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(859, 6);
+            this.button1.Location = new System.Drawing.Point(1145, 7);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(147, 25);
+            this.button1.Size = new System.Drawing.Size(196, 31);
             this.button1.TabIndex = 4;
             this.button1.Text = "Выгрузить в EXCEL\r\n";
             this.button1.UseVisualStyleBackColor = true;
@@ -1257,9 +1335,10 @@
             // tabPageProductionPlan
             // 
             this.tabPageProductionPlan.Controls.Add(this.tlp_pp_main);
-            this.tabPageProductionPlan.Location = new System.Drawing.Point(4, 20);
+            this.tabPageProductionPlan.Location = new System.Drawing.Point(4, 23);
+            this.tabPageProductionPlan.Margin = new System.Windows.Forms.Padding(4);
             this.tabPageProductionPlan.Name = "tabPageProductionPlan";
-            this.tabPageProductionPlan.Size = new System.Drawing.Size(1083, 442);
+            this.tabPageProductionPlan.Size = new System.Drawing.Size(1447, 547);
             this.tabPageProductionPlan.TabIndex = 4;
             this.tabPageProductionPlan.Text = "Производственный план";
             this.tabPageProductionPlan.UseVisualStyleBackColor = true;
@@ -1268,17 +1347,18 @@
             // 
             this.tlp_pp_main.ColumnCount = 2;
             this.tlp_pp_main.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlp_pp_main.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 488F));
+            this.tlp_pp_main.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Absolute, 651F));
             this.tlp_pp_main.Controls.Add(this.panel6, 1, 0);
             this.tlp_pp_main.Controls.Add(this.panel7, 1, 1);
             this.tlp_pp_main.Controls.Add(this.splitContainer1, 0, 0);
             this.tlp_pp_main.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tlp_pp_main.Location = new System.Drawing.Point(0, 0);
+            this.tlp_pp_main.Margin = new System.Windows.Forms.Padding(4);
             this.tlp_pp_main.Name = "tlp_pp_main";
             this.tlp_pp_main.RowCount = 2;
             this.tlp_pp_main.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tlp_pp_main.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 33F));
-            this.tlp_pp_main.Size = new System.Drawing.Size(1083, 442);
+            this.tlp_pp_main.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 41F));
+            this.tlp_pp_main.Size = new System.Drawing.Size(1447, 547);
             this.tlp_pp_main.TabIndex = 1;
             // 
             // panel6
@@ -1288,9 +1368,10 @@
             this.panel6.Controls.Add(this.btnProductionPlanMonthDec);
             this.panel6.Controls.Add(this.dgvDepartments);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(598, 3);
+            this.panel6.Location = new System.Drawing.Point(800, 4);
+            this.panel6.Margin = new System.Windows.Forms.Padding(4);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(482, 403);
+            this.panel6.Size = new System.Drawing.Size(643, 498);
             this.panel6.TabIndex = 2;
             // 
             // dtpProductionPlan
@@ -1298,26 +1379,29 @@
             this.dtpProductionPlan.CustomFormat = "MMMM yyyy";
             this.dtpProductionPlan.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.dtpProductionPlan.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpProductionPlan.Location = new System.Drawing.Point(140, 3);
+            this.dtpProductionPlan.Location = new System.Drawing.Point(187, 4);
+            this.dtpProductionPlan.Margin = new System.Windows.Forms.Padding(4);
             this.dtpProductionPlan.Name = "dtpProductionPlan";
-            this.dtpProductionPlan.Size = new System.Drawing.Size(197, 26);
+            this.dtpProductionPlan.Size = new System.Drawing.Size(261, 30);
             this.dtpProductionPlan.TabIndex = 3;
             // 
             // btnProductionPlanMonthInc
             // 
             this.btnProductionPlanMonthInc.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnProductionPlanMonthInc.Location = new System.Drawing.Point(343, 2);
+            this.btnProductionPlanMonthInc.Location = new System.Drawing.Point(457, 2);
+            this.btnProductionPlanMonthInc.Margin = new System.Windows.Forms.Padding(4);
             this.btnProductionPlanMonthInc.Name = "btnProductionPlanMonthInc";
-            this.btnProductionPlanMonthInc.Size = new System.Drawing.Size(28, 28);
+            this.btnProductionPlanMonthInc.Size = new System.Drawing.Size(37, 34);
             this.btnProductionPlanMonthInc.TabIndex = 2;
             this.btnProductionPlanMonthInc.Text = ">";
             this.btnProductionPlanMonthInc.UseVisualStyleBackColor = true;
             // 
             // btnProductionPlanMonthDec
             // 
-            this.btnProductionPlanMonthDec.Location = new System.Drawing.Point(106, 2);
+            this.btnProductionPlanMonthDec.Location = new System.Drawing.Point(141, 2);
+            this.btnProductionPlanMonthDec.Margin = new System.Windows.Forms.Padding(4);
             this.btnProductionPlanMonthDec.Name = "btnProductionPlanMonthDec";
-            this.btnProductionPlanMonthDec.Size = new System.Drawing.Size(28, 28);
+            this.btnProductionPlanMonthDec.Size = new System.Drawing.Size(37, 34);
             this.btnProductionPlanMonthDec.TabIndex = 1;
             this.btnProductionPlanMonthDec.Text = "<";
             this.btnProductionPlanMonthDec.UseVisualStyleBackColor = true;
@@ -1348,7 +1432,8 @@
             dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.dgvDepartments.DefaultCellStyle = dataGridViewCellStyle20;
-            this.dgvDepartments.Location = new System.Drawing.Point(-1, 33);
+            this.dgvDepartments.Location = new System.Drawing.Point(-1, 41);
+            this.dgvDepartments.Margin = new System.Windows.Forms.Padding(4);
             this.dgvDepartments.MultiSelect = false;
             this.dgvDepartments.Name = "dgvDepartments";
             this.dgvDepartments.ReadOnly = true;
@@ -1362,7 +1447,7 @@
             this.dgvDepartments.RowHeadersDefaultCellStyle = dataGridViewCellStyle21;
             this.dgvDepartments.RowHeadersVisible = false;
             this.dgvDepartments.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvDepartments.Size = new System.Drawing.Size(483, 367);
+            this.dgvDepartments.Size = new System.Drawing.Size(644, 454);
             this.dgvDepartments.TabIndex = 0;
             // 
             // panel7
@@ -1371,16 +1456,18 @@
             this.panel7.Controls.Add(this.butPrice);
             this.panel7.Controls.Add(this.btnProductionPlan_Reject);
             this.panel7.Controls.Add(this.btnProductionPlan_Approve);
-            this.panel7.Location = new System.Drawing.Point(598, 412);
+            this.panel7.Location = new System.Drawing.Point(800, 510);
+            this.panel7.Margin = new System.Windows.Forms.Padding(4);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(482, 27);
+            this.panel7.Size = new System.Drawing.Size(643, 33);
             this.panel7.TabIndex = 3;
             // 
             // butPrice
             // 
-            this.butPrice.Location = new System.Drawing.Point(404, 0);
+            this.butPrice.Location = new System.Drawing.Point(539, 0);
+            this.butPrice.Margin = new System.Windows.Forms.Padding(4);
             this.butPrice.Name = "butPrice";
-            this.butPrice.Size = new System.Drawing.Size(75, 27);
+            this.butPrice.Size = new System.Drawing.Size(100, 33);
             this.butPrice.TabIndex = 4;
             this.butPrice.Text = "Выручка";
             this.butPrice.UseVisualStyleBackColor = true;
@@ -1388,9 +1475,10 @@
             // 
             // btnProductionPlan_Reject
             // 
-            this.btnProductionPlan_Reject.Location = new System.Drawing.Point(79, 0);
+            this.btnProductionPlan_Reject.Location = new System.Drawing.Point(105, 0);
+            this.btnProductionPlan_Reject.Margin = new System.Windows.Forms.Padding(4);
             this.btnProductionPlan_Reject.Name = "btnProductionPlan_Reject";
-            this.btnProductionPlan_Reject.Size = new System.Drawing.Size(74, 27);
+            this.btnProductionPlan_Reject.Size = new System.Drawing.Size(99, 33);
             this.btnProductionPlan_Reject.TabIndex = 1;
             this.btnProductionPlan_Reject.Text = "Отклонить";
             this.btnProductionPlan_Reject.UseVisualStyleBackColor = true;
@@ -1398,8 +1486,9 @@
             // btnProductionPlan_Approve
             // 
             this.btnProductionPlan_Approve.Location = new System.Drawing.Point(1, 0);
+            this.btnProductionPlan_Approve.Margin = new System.Windows.Forms.Padding(4);
             this.btnProductionPlan_Approve.Name = "btnProductionPlan_Approve";
-            this.btnProductionPlan_Approve.Size = new System.Drawing.Size(75, 27);
+            this.btnProductionPlan_Approve.Size = new System.Drawing.Size(100, 33);
             this.btnProductionPlan_Approve.TabIndex = 0;
             this.btnProductionPlan_Approve.Text = "Утвердить";
             this.btnProductionPlan_Approve.UseVisualStyleBackColor = true;
@@ -1407,7 +1496,8 @@
             // splitContainer1
             // 
             this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(3, 3);
+            this.splitContainer1.Location = new System.Drawing.Point(4, 4);
+            this.splitContainer1.Margin = new System.Windows.Forms.Padding(4);
             this.splitContainer1.Name = "splitContainer1";
             this.splitContainer1.Orientation = System.Windows.Forms.Orientation.Horizontal;
             // 
@@ -1420,8 +1510,9 @@
             this.splitContainer1.Panel2.Controls.Add(this.label6);
             this.splitContainer1.Panel2.Controls.Add(this.richTextBox1);
             this.tlp_pp_main.SetRowSpan(this.splitContainer1, 2);
-            this.splitContainer1.Size = new System.Drawing.Size(589, 436);
-            this.splitContainer1.SplitterDistance = 381;
+            this.splitContainer1.Size = new System.Drawing.Size(788, 539);
+            this.splitContainer1.SplitterDistance = 471;
+            this.splitContainer1.SplitterWidth = 5;
             this.splitContainer1.TabIndex = 4;
             // 
             // dgvProductionPlan
@@ -1449,6 +1540,7 @@
             this.dgvProductionPlan.DefaultCellStyle = dataGridViewCellStyle23;
             this.dgvProductionPlan.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvProductionPlan.Location = new System.Drawing.Point(0, 0);
+            this.dgvProductionPlan.Margin = new System.Windows.Forms.Padding(4);
             this.dgvProductionPlan.Name = "dgvProductionPlan";
             this.dgvProductionPlan.ReadOnly = true;
             dataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -1461,15 +1553,16 @@
             this.dgvProductionPlan.RowHeadersDefaultCellStyle = dataGridViewCellStyle24;
             this.dgvProductionPlan.RowHeadersVisible = false;
             this.dgvProductionPlan.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvProductionPlan.Size = new System.Drawing.Size(589, 381);
+            this.dgvProductionPlan.Size = new System.Drawing.Size(788, 471);
             this.dgvProductionPlan.TabIndex = 1;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(5, -1);
+            this.label6.Location = new System.Drawing.Point(7, -1);
+            this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(80, 13);
+            this.label6.Size = new System.Drawing.Size(102, 17);
             this.label6.TabIndex = 1;
             this.label6.Text = "Комментарий ";
             // 
@@ -1478,37 +1571,40 @@
             this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox1.Location = new System.Drawing.Point(1, 13);
+            this.richTextBox1.Location = new System.Drawing.Point(1, 16);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4);
             this.richTextBox1.MaxLength = 2900;
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(587, 35);
+            this.richTextBox1.Size = new System.Drawing.Size(784, 42);
             this.richTextBox1.TabIndex = 0;
             this.richTextBox1.Text = "";
             // 
             // dgvIndividualPlan_Menu
             // 
+            this.dgvIndividualPlan_Menu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.dgvIndividualPlan_Menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ToolStripMenuItem_IndividualPlan_DeleteTableRecord,
             this.dgvIndividualPlan_Menu_SaveToExcel});
             this.dgvIndividualPlan_Menu.Name = "dgvIndividualPlan_Menu";
-            this.dgvIndividualPlan_Menu.Size = new System.Drawing.Size(218, 48);
+            this.dgvIndividualPlan_Menu.Size = new System.Drawing.Size(261, 52);
             // 
             // ToolStripMenuItem_IndividualPlan_DeleteTableRecord
             // 
             this.ToolStripMenuItem_IndividualPlan_DeleteTableRecord.Name = "ToolStripMenuItem_IndividualPlan_DeleteTableRecord";
-            this.ToolStripMenuItem_IndividualPlan_DeleteTableRecord.Size = new System.Drawing.Size(217, 22);
+            this.ToolStripMenuItem_IndividualPlan_DeleteTableRecord.Size = new System.Drawing.Size(260, 24);
             this.ToolStripMenuItem_IndividualPlan_DeleteTableRecord.Text = "Удалить";
             this.ToolStripMenuItem_IndividualPlan_DeleteTableRecord.Click += new System.EventHandler(this.ToolStripMenuItem_IndividualPlan_DeleteTableRecord_Click);
             // 
             // dgvIndividualPlan_Menu_SaveToExcel
             // 
             this.dgvIndividualPlan_Menu_SaveToExcel.Name = "dgvIndividualPlan_Menu_SaveToExcel";
-            this.dgvIndividualPlan_Menu_SaveToExcel.Size = new System.Drawing.Size(217, 22);
+            this.dgvIndividualPlan_Menu_SaveToExcel.Size = new System.Drawing.Size(260, 24);
             this.dgvIndividualPlan_Menu_SaveToExcel.Text = "Выгрузить таблицу в Excel";
             this.dgvIndividualPlan_Menu_SaveToExcel.Click += new System.EventHandler(this.dgvIndividualPlan_Menu_SaveToExcel_Click);
             // 
             // dgvSelectedPlan_Menu
             // 
+            this.dgvSelectedPlan_Menu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.dgvSelectedPlan_Menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dgvSelectedPlan_Menu_AutoPlan,
             this.dgvSelectedPlan_Menu_ManuallyPlan,
@@ -1517,50 +1613,51 @@
             this.toolStripSeparator2,
             this.dgvSelectedPlan_Menu_SaveToExcel});
             this.dgvSelectedPlan_Menu.Name = "dgvSelectedPlan_Menu";
-            this.dgvSelectedPlan_Menu.Size = new System.Drawing.Size(245, 120);
+            this.dgvSelectedPlan_Menu.Size = new System.Drawing.Size(294, 130);
             // 
             // dgvSelectedPlan_Menu_AutoPlan
             // 
             this.dgvSelectedPlan_Menu_AutoPlan.Name = "dgvSelectedPlan_Menu_AutoPlan";
-            this.dgvSelectedPlan_Menu_AutoPlan.Size = new System.Drawing.Size(244, 22);
+            this.dgvSelectedPlan_Menu_AutoPlan.Size = new System.Drawing.Size(293, 24);
             this.dgvSelectedPlan_Menu_AutoPlan.Text = "Запланировать автоматически";
             this.dgvSelectedPlan_Menu_AutoPlan.Click += new System.EventHandler(this.dgvSelectedPlan_Menu_AutoPlan_Click);
             // 
             // dgvSelectedPlan_Menu_ManuallyPlan
             // 
             this.dgvSelectedPlan_Menu_ManuallyPlan.Name = "dgvSelectedPlan_Menu_ManuallyPlan";
-            this.dgvSelectedPlan_Menu_ManuallyPlan.Size = new System.Drawing.Size(244, 22);
+            this.dgvSelectedPlan_Menu_ManuallyPlan.Size = new System.Drawing.Size(293, 24);
             this.dgvSelectedPlan_Menu_ManuallyPlan.Text = "Запланировать вручную";
             this.dgvSelectedPlan_Menu_ManuallyPlan.Click += new System.EventHandler(this.dgvSelectedPlan_Menu_ManuallyPlan_Click);
             // 
             // dgvSelectedPlan_Menu_DeleteSelected
             // 
             this.dgvSelectedPlan_Menu_DeleteSelected.Name = "dgvSelectedPlan_Menu_DeleteSelected";
-            this.dgvSelectedPlan_Menu_DeleteSelected.Size = new System.Drawing.Size(244, 22);
+            this.dgvSelectedPlan_Menu_DeleteSelected.Size = new System.Drawing.Size(293, 24);
             this.dgvSelectedPlan_Menu_DeleteSelected.Text = "Удалить выбранные";
             this.dgvSelectedPlan_Menu_DeleteSelected.Click += new System.EventHandler(this.dgvSelectedPlan_Menu_DeleteSelected_Click);
             // 
             // dgvSelectedPlan_Menu_DeleteExecutor
             // 
             this.dgvSelectedPlan_Menu_DeleteExecutor.Name = "dgvSelectedPlan_Menu_DeleteExecutor";
-            this.dgvSelectedPlan_Menu_DeleteExecutor.Size = new System.Drawing.Size(244, 22);
+            this.dgvSelectedPlan_Menu_DeleteExecutor.Size = new System.Drawing.Size(293, 24);
             this.dgvSelectedPlan_Menu_DeleteExecutor.Text = "Удалить исполнителя";
             this.dgvSelectedPlan_Menu_DeleteExecutor.Click += new System.EventHandler(this.dgvSelectedPlan_Menu_DeleteExecutor_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(241, 6);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(290, 6);
             // 
             // dgvSelectedPlan_Menu_SaveToExcel
             // 
             this.dgvSelectedPlan_Menu_SaveToExcel.Name = "dgvSelectedPlan_Menu_SaveToExcel";
-            this.dgvSelectedPlan_Menu_SaveToExcel.Size = new System.Drawing.Size(244, 22);
+            this.dgvSelectedPlan_Menu_SaveToExcel.Size = new System.Drawing.Size(293, 24);
             this.dgvSelectedPlan_Menu_SaveToExcel.Text = "Выгрузить в таблицу Excell";
             this.dgvSelectedPlan_Menu_SaveToExcel.Click += new System.EventHandler(this.dgvSelectedPlan_Menu_SaveToExcel_Click);
             // 
             // dgvDepartmentPlan_Menu
             // 
+            this.dgvDepartmentPlan_Menu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.dgvDepartmentPlan_Menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dgvDepartmentPlan_Menu_ShowSet,
             this.dgvDepartmentPlan_Menu_ShowSetHistory,
@@ -1570,78 +1667,80 @@
             this.toolStripSeparator1,
             this.dgvDepartmentPlan_Menu_SaveToExcel});
             this.dgvDepartmentPlan_Menu.Name = "dgvDepartmentPlan_Menu";
-            this.dgvDepartmentPlan_Menu.Size = new System.Drawing.Size(277, 164);
+            this.dgvDepartmentPlan_Menu.Size = new System.Drawing.Size(337, 154);
             // 
             // dgvDepartmentPlan_Menu_ShowSet
             // 
             this.dgvDepartmentPlan_Menu_ShowSet.Name = "dgvDepartmentPlan_Menu_ShowSet";
-            this.dgvDepartmentPlan_Menu_ShowSet.Size = new System.Drawing.Size(276, 22);
+            this.dgvDepartmentPlan_Menu_ShowSet.Size = new System.Drawing.Size(336, 24);
             this.dgvDepartmentPlan_Menu_ShowSet.Text = "Плановая задача";
             this.dgvDepartmentPlan_Menu_ShowSet.Click += new System.EventHandler(this.dgvDepartmentPlan_Menu_ShowSet_Click);
             // 
             // dgvDepartmentPlan_Menu_ShowSetHistory
             // 
             this.dgvDepartmentPlan_Menu_ShowSetHistory.Name = "dgvDepartmentPlan_Menu_ShowSetHistory";
-            this.dgvDepartmentPlan_Menu_ShowSetHistory.Size = new System.Drawing.Size(276, 22);
+            this.dgvDepartmentPlan_Menu_ShowSetHistory.Size = new System.Drawing.Size(336, 24);
             this.dgvDepartmentPlan_Menu_ShowSetHistory.Text = "История комплекта";
             this.dgvDepartmentPlan_Menu_ShowSetHistory.Click += new System.EventHandler(this.dgvDepartmentPlan_Menu_ShowSetHistory_Click);
             // 
             // dgvDepartmentPlan_Menu_Request
             // 
             this.dgvDepartmentPlan_Menu_Request.Name = "dgvDepartmentPlan_Menu_Request";
-            this.dgvDepartmentPlan_Menu_Request.Size = new System.Drawing.Size(276, 22);
+            this.dgvDepartmentPlan_Menu_Request.Size = new System.Drawing.Size(336, 24);
             this.dgvDepartmentPlan_Menu_Request.Text = "Запросить перенос сроков";
             this.dgvDepartmentPlan_Menu_Request.Click += new System.EventHandler(this.dgvDepartmentPlan_Menu_Request_Click);
             // 
             // dgvDepartmentPlan_Menu_DeleteRequest
             // 
             this.dgvDepartmentPlan_Menu_DeleteRequest.Name = "dgvDepartmentPlan_Menu_DeleteRequest";
-            this.dgvDepartmentPlan_Menu_DeleteRequest.Size = new System.Drawing.Size(276, 22);
+            this.dgvDepartmentPlan_Menu_DeleteRequest.Size = new System.Drawing.Size(336, 24);
             this.dgvDepartmentPlan_Menu_DeleteRequest.Text = "Отменить запрос на перенос сроков";
             this.dgvDepartmentPlan_Menu_DeleteRequest.Click += new System.EventHandler(this.dgvDepartmentPlan_Menu_DeleteRequest_Click);
             // 
             // dgvDepartmentPlan_Menu_Agree
             // 
             this.dgvDepartmentPlan_Menu_Agree.Name = "dgvDepartmentPlan_Menu_Agree";
-            this.dgvDepartmentPlan_Menu_Agree.Size = new System.Drawing.Size(276, 22);
+            this.dgvDepartmentPlan_Menu_Agree.Size = new System.Drawing.Size(336, 24);
             this.dgvDepartmentPlan_Menu_Agree.Text = "Согласовать указанные даты";
             this.dgvDepartmentPlan_Menu_Agree.Click += new System.EventHandler(this.dgvDepartmentPlan_Menu_Agree_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(273, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(333, 6);
             // 
             // dgvDepartmentPlan_Menu_SaveToExcel
             // 
             this.dgvDepartmentPlan_Menu_SaveToExcel.Name = "dgvDepartmentPlan_Menu_SaveToExcel";
-            this.dgvDepartmentPlan_Menu_SaveToExcel.Size = new System.Drawing.Size(276, 22);
+            this.dgvDepartmentPlan_Menu_SaveToExcel.Size = new System.Drawing.Size(336, 24);
             this.dgvDepartmentPlan_Menu_SaveToExcel.Text = "Выгрузить в таблицу Excel";
             this.dgvDepartmentPlan_Menu_SaveToExcel.Click += new System.EventHandler(this.dgvDepartmentPlan_Manu_SaveToExcel_Click);
             // 
             // dgvDepartmentUsers_Menu
             // 
+            this.dgvDepartmentUsers_Menu.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.dgvDepartmentUsers_Menu.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.dgvDepartmentUsers_Menu_SaveToExcel});
             this.dgvDepartmentUsers_Menu.Name = "dgvDepartmentUsers_Menu";
-            this.dgvDepartmentUsers_Menu.Size = new System.Drawing.Size(218, 26);
+            this.dgvDepartmentUsers_Menu.Size = new System.Drawing.Size(261, 28);
             // 
             // dgvDepartmentUsers_Menu_SaveToExcel
             // 
             this.dgvDepartmentUsers_Menu_SaveToExcel.Name = "dgvDepartmentUsers_Menu_SaveToExcel";
-            this.dgvDepartmentUsers_Menu_SaveToExcel.Size = new System.Drawing.Size(217, 22);
+            this.dgvDepartmentUsers_Menu_SaveToExcel.Size = new System.Drawing.Size(260, 24);
             this.dgvDepartmentUsers_Menu_SaveToExcel.Text = "Выгрузить в таблицу Excel";
             this.dgvDepartmentUsers_Menu_SaveToExcel.Click += new System.EventHandler(this.dgvDepartmentUsers_Menu_SaveToExcel_Click);
             // 
             // frmMain
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1091, 490);
+            this.ClientSize = new System.Drawing.Size(1455, 603);
             this.Controls.Add(this.menuStripMain);
             this.Controls.Add(this.dtpApprovedPlan);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStripMain;
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmMain";
             this.Text = "ПЛАТАН";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmMain_FormClosed);
@@ -1823,7 +1922,8 @@
         private System.Windows.Forms.ToolStripMenuItem отчетПоТрудозатратамToolStripMenuItem;
         private System.Windows.Forms.Button butPrice;
         private System.Windows.Forms.ToolStripMenuItem dgvDepartmentPlan_Menu_ShowSet;
-
+        private System.Windows.Forms.ToolStripMenuItem отчетПоОтделуToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem отчетТабельПоЭтапувЧасахToolStripMenuItem;
     }
 }
 
